@@ -7,4 +7,10 @@
 
 import Foundation
 
-final class MyFirstFile {}
+public final class MyFirstFile {
+    private let name: String
+    
+    public init(name: String) {
+        self.name = name
+    }
+}
