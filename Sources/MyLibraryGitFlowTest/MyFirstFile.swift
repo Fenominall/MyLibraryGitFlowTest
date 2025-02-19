@@ -22,8 +22,16 @@ public final class MyFirstFile {
     }
     
     func setName(with name: String) {
-        queue.async(flags: .barrier) { [weak self] in
+        threadSafeQueue.async(flags: .barrier) { [weak self] in
             self?.myNamesArray.append(name)
         }
+    }
+    
+    private func randomlySetName() {
+        guard let randomNames = myNamesArray.randomElement() else {
+            return
+        }
+        
+        name = randomNames
     }
 }
