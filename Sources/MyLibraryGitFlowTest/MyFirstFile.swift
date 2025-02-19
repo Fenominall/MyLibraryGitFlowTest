@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class MyFirstFile {
+public actor MyFirstFile {
     private var name: String
     
     public init(name: String) {
@@ -15,16 +15,14 @@ public final class MyFirstFile {
     }
     
     private var myNamesArray = [String]()
-    private let threadSafeQueue = DispatchQueue(label: "my.queu", attributes: .concurrent)
+    private let threadSafeQueue = DispatchQueue(label: "my.queu.mokTitle", attributes: .concurrent)
     
     private func changeName(with words: String) -> String {
-        return name + " " + words
+        return name + " " + words + "WORD FUCK"
     }
     
     func setName(with name: String) {
-        threadSafeQueue.async(flags: .barrier) { [weak self] in
-            self?.myNamesArray.append(name)
-        }
+        myNamesArray.append(name)
     }
     
     private func randomlySetName() {
