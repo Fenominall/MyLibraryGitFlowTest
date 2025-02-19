@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class MyFirstFile {
+public actor MyFirstFile {
     private var name: String
     
     public init(name: String) {
@@ -22,9 +22,7 @@ public final class MyFirstFile {
     }
     
     func setName(with name: String) {
-        threadSafeQueue.async(flags: .barrier) { [weak self] in
-            self?.myNamesArray.append(name)
-        }
+        myNamesArray.append(name)
     }
     
     private func randomlySetName() {
