@@ -14,7 +14,16 @@ public final class MyFirstFile {
         self.name = name
     }
     
+    private var myNamesArray = [String]()
+    private let queue = DispatchQueue(label: "my.queu", attributes: .concurrent)
+    
     private func changeName(with words: String) -> String {
         return name + " " + words
+    }
+    
+    func setName(with name: String) {
+        queue.async(flags: .barrier) { [weak self] in
+            self?.myNamesArray.append(name)
+        }
     }
 }
