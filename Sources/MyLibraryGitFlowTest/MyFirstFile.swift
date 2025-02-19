@@ -13,4 +13,8 @@ public final class MyFirstFile {
     public init(name: String) {
         self.name = name
     }
+    
+    private func changeName(with words: String) -> String {
+        return name + " " + words
+    }
 }
