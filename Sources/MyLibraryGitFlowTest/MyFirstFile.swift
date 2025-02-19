@@ -15,6 +15,6 @@ public final class MyFirstFile {
     }
     
     private func changeName(with words: String) -> String {
-        return name + words
+        return name + " " + words
     }
 }
