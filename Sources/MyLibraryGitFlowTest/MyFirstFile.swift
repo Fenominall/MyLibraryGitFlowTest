@@ -8,7 +8,7 @@
 import Foundation
 
 public final class MyFirstFile {
-    private let name: String
+    private var name: String
     
     public init(name: String) {
         self.name = name
