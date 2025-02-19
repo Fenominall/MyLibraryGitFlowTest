@@ -15,7 +15,6 @@ public actor MyFirstFile {
     }
     
     private var myNamesArray = [String]()
-    private let threadSafeQueue = DispatchQueue(label: "my.queu.com", attributes: .concurrent)
     
     private func changeName(with words: String) -> String {
         return name + " " + words
