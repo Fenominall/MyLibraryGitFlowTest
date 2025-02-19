@@ -15,7 +15,7 @@ public final class MyFirstFile {
     }
     
     private var myNamesArray = [String]()
-    private let queue = DispatchQueue(label: "my.queu", attributes: .concurrent)
+    private let threadSafeQueue = DispatchQueue(label: "my.queu", attributes: .concurrent)
     
     private func changeName(with words: String) -> String {
         return name + " " + words
